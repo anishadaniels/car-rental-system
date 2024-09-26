@@ -10,10 +10,11 @@ package com.mycompany.car.rental.system;
  * @author Anisha.Amondi
  */
 public class Car {
-    private String make;
-    private String model;
-    private String licensePlate;
-    private double rentalPricePerDay;
+    // Since in this scope of the project, went be changing these values, let's just declare them as constants
+    private final String make;
+    private final String model;
+    private final String licensePlate;
+    private final double rentalPricePerDay;
     private boolean isRented;
 
     // Constructor

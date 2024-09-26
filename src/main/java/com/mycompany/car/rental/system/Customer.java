@@ -10,24 +10,26 @@ package com.mycompany.car.rental.system;
  * @author Anisha.Amondi
  */
 public class Customer {
-    private String name;
-    private String address;
+    // Same thing, we are not changing these values so we declare them as constants
+    private final String name;
+    private final String residenceCity;
     private String phoneNumber;
 
-    // Constructor
-    public Customer(String name, String address, String phoneNumber) {
+    // Our little facncy Constructor
+    public Customer(String name, String residenceCity, String phoneNumber) {
         this.name = name;
-        this.address = address;
+        this.residenceCity = residenceCity;
         this.phoneNumber = phoneNumber;
     }
 
     // Getters and setters
+    // Get name of Customer.
     public String getName() {
         return name;
     }
-
-    public String getAddress() {
-        return address;
+    // Get residenceCity of the customer
+    public String getResidenceCity() {
+        return residenceCity;
     }
 
     public String getPhoneNumber() {
