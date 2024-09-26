@@ -1,0 +1,72 @@
+Car Rental System Documentation
+Overview
+The Car Rental System is a Java application designed to manage the rental of cars. It uses Object-Oriented Programming principles to encapsulate data and behaviors, providing functionalities for car rental, customer management, and rental transactions. The system allows users to add cars and customers, rent cars, and return them while managing their states effectively.
+Features
+•	Add cars and customers to the rental agency.
+•	Rent and return cars.
+•	Calculate total rental costs based on days rented.
+•	Handle errors for non-existent cars/customers and rental status.
+Installation Instructions
+1.	Clone the Repository:
+bash
+Copy code
+git clone <repository-url>
+cd car-rental-system
+2.	Compile the Code: Ensure you have Java Development Kit (JDK) installed. Compile the Java files:
+bash
+Copy code
+javac *.java
+3.	Run the Test Cases: Ensure JUnit is included in your project dependencies. Use your IDE or command line to run the test cases:
+bash
+Copy code
+java -cp .:junit-platform-console-standalone-<version>.jar org.junit.platform.console.ConsoleLauncher --scan-classpath
+Class Descriptions
+1. Car
+Represents a car available for rent.
+Attributes
+•	String make: The make of the car (e.g., Toyota, Honda).
+•	String model: The model of the car (e.g., Corolla, Civic).
+•	String licensePlate: The unique identifier for the car.
+•	double rentalPricePerDay: The cost to rent the car per day.
+•	boolean isRented: The rental status of the car.
+Methods
+•	Constructor: Car(String make, String model, String licensePlate, double rentalPricePerDay)
+•	Getters:
+o	String getMake()
+o	String getModel()
+o	String getLicensePlate()
+o	double getRentalPricePerDay()
+o	boolean isRented()
+•	Behaviors:
+o	void rent(): Marks the car as rented.
+o	void returnCar(): Marks the car as available.
+2. Customer
+Represents a customer who can rent cars.
+Attributes
+•	String name: The name of the customer.
+•	String id: The unique identifier for the customer.
+Methods
+•	Constructor: Customer(String name, String id)
+•	Getters:
+o	String getName()
+o	String getId()
+3. RentalAgency
+Manages the collection of cars and customers and handles rental transactions.
+Attributes
+•	Map<String, Car> cars: Stores the cars available for rent.
+•	Map<String, Customer> customers: Stores the customers.
+Methods
+•	Constructor: RentalAgency()
+•	Add Methods:
+o	void addCar(Car car): Adds a car to the agency.
+o	void addCustomer(Customer customer): Adds a customer to the agency.
+•	Rental Methods:
+o	String rentCar(String licensePlate, String customerId, int rentalDays): Handles the rental process and returns a confirmation message.
+o	String returnCar(String licensePlate): Handles the return process and returns a confirmation message.
+
+
+Testing
+The system includes unit tests for each class using JUnit. To ensure everything works correctly, run the tests using the instructions provided in the installation section.
+Contribution
+If you wish to contribute to this project, please fork the repository, create a feature branch, and submit a pull request with your changes.
+
